@@ -265,6 +265,11 @@ def simpleindex():
         </head>
         <body>
             <div class="container my-3">
+            <div class="btn-group" role="group" aria-label="navigation">
+              <button type="button" class="btn btn-sm btn-outline-primary" href="/">Home</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href="{{PACKAGES}}">Packages</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href={{SIMPLE}}">Simple Index</button>
+            </div>
             <h1>Simple Index</h1>
             % for p in links:
                  <a href="{{p}}/">{{p}}</a><br>
@@ -313,6 +318,11 @@ def simple(project):
         </head>
         <body>
             <div class="container my-3">
+            <div class="btn-group" role="group" aria-label="navigation">
+              <button type="button" class="btn btn-sm btn-outline-primary" href="/">Home</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href="{{PACKAGES}}">Packages</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href={{SIMPLE}}">Simple Index</button>
+            </div>
             <h1>Links for {{project}}</h1>
             % for file, href in links:
                  <a href="{{href}}">{{file}}</a><br>
@@ -347,6 +357,11 @@ def list_packages():
         </head>
         <body>
             <div class="container my-3">
+            <div class="btn-group" role="group" aria-label="navigation">
+              <button type="button" class="btn btn-sm btn-outline-primary" href="/">Home</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href="{{PACKAGES}}">Packages</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href={{SIMPLE}}">Simple Index</button>
+            </div>
             <h1>Index of packages</h1>
             % for file, href in links:
                  <a href="{{href}}">{{file}}</a><br>

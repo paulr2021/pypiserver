@@ -9,7 +9,7 @@
 </head>
 <div class="container my-3">
     <div class="col-lg-8 mx-auto">
-        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <header class="d-flex align-items-center pb-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1036.67 250.33" width="300" height="64">
                 <title>Profusion PyPI Server</title>
@@ -26,8 +26,12 @@
                 <span class="fs-4">PyPI Server</span>
             </a>
         </header>
+        <div class="btn-group" role="group" aria-label="navigation">
+              <button type="button" class="btn btn-sm btn-outline-primary" href="/">Home</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href="{{PACKAGES}}">Packages</button>
+              <button type="button" class="btn btn-sm btn-outline-primary" href={{SIMPLE}}">Simple Index</button>
+        </div>
         <main>
-            <h1>Welcome to Profusion PyPI Server</h1>
             <div class="my-5">
                 <p>This is a PyPI compatible package index serving {{NUMPKGS}} packages.</p>
                 <p>To use this server with <code>pip</code>, run the following command:
