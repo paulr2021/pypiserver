@@ -1,23 +1,10 @@
-# Build Multiple Architectures from macOS
+# Build Multiple Architectures from macOS:arm64
 
-Create buildx bootstrap builder:
+Run build and push to AWS:
 ```shell
-docker buildx create --name your-builder-name
+aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 071048290189.dkr.ecr.eu-west-2.amazonaws.com
 
-docker buildx use your-builder-name
+docker build --platform linux/386 -t profusion-pypiserver:latest .
 
-docker buildx inspect --bootstrap
-```
-
-Run build:
-```shell
-# linux/386
-docker buildx build \                                                                                                                                 
-  --platform linux/386 \  
-  --push \
-  -t 071048290189.dkr.ecr.eu-west-2.amazonaws.com/profusion-pypiserver:latest \
-  .
-
-# Multiple
-docker buildx build --platform linux/amd64,linux/arm64 -t profusion-pypiserver:latest --push .
+docker push 071048290189.dkr.ecr.eu-west-2.amazonaws.com/profusion-pypiserver:latest
 ```
